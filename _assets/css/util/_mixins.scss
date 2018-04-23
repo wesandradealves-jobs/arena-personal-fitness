@@ -1,0 +1,57 @@
+@mixin transition($tempo) {
+    -webkit-transition: all linear $tempo;
+    -moz-transition: all linear $tempo;
+    -ms-transition: all linear $tempo;
+    -o-transition: all linear $tempo;
+    transition: all linear $tempo;
+}
+
+@mixin height($tempo) {
+    -webkit-transition: max-height $tempo ease-in-out;
+    -moz-transition: max-height $tempo ease-in-out;
+    -ms-transition: max-height $tempo ease-in-out;
+    -o-transition: max-height $tempo ease-in-out;
+    transition: max-height $tempo ease-in-out;
+}
+
+@mixin mheight($tempo) {
+    -webkit-transition: min-height $tempo;
+    -moz-transition: min-height $tempo;
+    -ms-transition: min-height $tempo;
+    -o-transition: min-height $tempo;
+    transition: min-height $tempo;
+}
+
+@mixin border($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -ms-border-radius: $radius;
+}
+
+@mixin shadow($val1, $val2, $val3, $val4, $cor) {
+    -webkit-box-shadow: $val1 $val2 $val3 $val4 $cor;
+    -moz-box-shadow: $val1 $val2 $val3 $val4 $cor;
+    -ms-box-shadow: $val1 $val2 $val3 $val4 $cor;
+    box-shadow: $val1 $val2 $val3 $val4 $cor;
+}
+
+@mixin background($size) {
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -ms-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;
+}
+
+@mixin scale($size){
+  -webkit-transform: scale($size);  
+      -ms-transform: scale($size);  
+          transform: scale($size);    
+}
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+}
